@@ -1,0 +1,30 @@
+﻿
+@{
+    ViewBag.Title = "Productos disponibles";
+}
+<link rel="stylesheet" runat="server" media="screen" href="~/Content/login.css" />
+
+<div class="myform form">
+    <h3 class="fila">Productos disponibles</h3>
+
+    @foreach (var item in Model.responseList)
+    {
+        <div class="myform form">
+            <div class="row">
+                <div class="col-md-12 ">
+                    <h3>Cuenta de :@item.tipoCuenta</h3>
+                    <hr />
+                    <h3>Saldo disponible: @item.saldo</h3>
+                    <h3>Número de cuenta: @item.numeroCuenta</h3>
+                </div>
+
+            </div>
+        </div>
+        <br />
+
+
+    }
+
+</div>
+
+

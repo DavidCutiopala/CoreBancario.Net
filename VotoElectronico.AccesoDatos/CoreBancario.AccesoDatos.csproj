@@ -1,0 +1,277 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{92B0B527-CE57-47A0-B573-C7CDC5B61C54}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VotoElectronico.AccesoDatos</RootNamespace>
+    <AssemblyName>VotoElectronico.AccesoDatos</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis, Version=1.49.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.49.0\lib\net45\Google.Apis.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth, Version=1.49.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.49.0\lib\net45\Google.Apis.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Auth.PlatformServices, Version=1.49.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Auth.1.49.0\lib\net45\Google.Apis.Auth.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Core, Version=1.49.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Core.1.49.0\lib\net45\Google.Apis.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.Drive.v3, Version=1.49.0.2091, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.Drive.v3.1.49.0.2091\lib\net45\Google.Apis.Drive.v3.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Apis.PlatformServices, Version=1.49.0.0, Culture=neutral, PublicKeyToken=4b01fa6e34db77ab, processorArchitecture=MSIL">
+      <HintPath>..\packages\Google.Apis.1.49.0\lib\net45\Google.Apis.PlatformServices.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data">
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VotoElectronicoRepositorioGenerico">
+      <HintPath>..\dll\VotoElectronicoRepositorioGenerico.dll</HintPath>
+    </Reference>
+    <Reference Include="VotoElectronicoSpecification, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\dll\VotoElectronicoSpecification.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Migrations\202008300159202_UnificarMigraciones.cs" />
+    <Compile Include="Migrations\202008300159202_UnificarMigraciones.Designer.cs">
+      <DependentUpon>202008300159202_UnificarMigraciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010060247459_NuevosCamposEnTablas.cs" />
+    <Compile Include="Migrations\202010060247459_NuevosCamposEnTablas.Designer.cs">
+      <DependentUpon>202010060247459_NuevosCamposEnTablas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010080300151_CampoFotoEnCandidato.cs" />
+    <Compile Include="Migrations\202010080300151_CampoFotoEnCandidato.Designer.cs">
+      <DependentUpon>202010080300151_CampoFotoEnCandidato.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202010112102583_NombreMensajeEnTablaTipoMensaje.cs" />
+    <Compile Include="Migrations\202010112102583_NombreMensajeEnTablaTipoMensaje.Designer.cs">
+      <DependentUpon>202010112102583_NombreMensajeEnTablaTipoMensaje.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011090025376_NuevasTablasParaPermisos.cs" />
+    <Compile Include="Migrations\202011090025376_NuevasTablasParaPermisos.Designer.cs">
+      <DependentUpon>202011090025376_NuevasTablasParaPermisos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011090029201_CorreccionTablaRecursos.cs" />
+    <Compile Include="Migrations\202011090029201_CorreccionTablaRecursos.Designer.cs">
+      <DependentUpon>202011090029201_CorreccionTablaRecursos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011150816466_rolesUsuario.cs" />
+    <Compile Include="Migrations\202011150816466_rolesUsuario.Designer.cs">
+      <DependentUpon>202011150816466_rolesUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011180253278_CorreccionTablaPermiso.cs" />
+    <Compile Include="Migrations\202011180253278_CorreccionTablaPermiso.Designer.cs">
+      <DependentUpon>202011180253278_CorreccionTablaPermiso.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011180359164_CorreccionRecursoCircular.cs" />
+    <Compile Include="Migrations\202011180359164_CorreccionRecursoCircular.Designer.cs">
+      <DependentUpon>202011180359164_CorreccionRecursoCircular.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011240000482_menuUsuarioPropiedades.cs" />
+    <Compile Include="Migrations\202011240000482_menuUsuarioPropiedades.Designer.cs">
+      <DependentUpon>202011240000482_menuUsuarioPropiedades.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202011300323204_tokenCambioClaveUsuario.cs" />
+    <Compile Include="Migrations\202011300323204_tokenCambioClaveUsuario.Designer.cs">
+      <DependentUpon>202011300323204_tokenCambioClaveUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012030515312_entidades_Voto_opcion.cs" />
+    <Compile Include="Migrations\202012030515312_entidades_Voto_opcion.Designer.cs">
+      <DependentUpon>202012030515312_entidades_Voto_opcion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012150559078_procesoElectoralVoto.cs" />
+    <Compile Include="Migrations\202012150559078_procesoElectoralVoto.Designer.cs">
+      <DependentUpon>202012150559078_procesoElectoralVoto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012250230344_CampoEscanioEnVoto.cs" />
+    <Compile Include="Migrations\202012250230344_CampoEscanioEnVoto.Designer.cs">
+      <DependentUpon>202012250230344_CampoEscanioEnVoto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202012261844163_indicesEscanioEleccionNombreOrden.cs" />
+    <Compile Include="Migrations\202012261844163_indicesEscanioEleccionNombreOrden.designer.cs">
+      <DependentUpon>202012261844163_indicesEscanioEleccionNombreOrden.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101171759425_TABLASNUEVAS.cs" />
+    <Compile Include="Migrations\202101171759425_TABLASNUEVAS.designer.cs">
+      <DependentUpon>202101171759425_TABLASNUEVAS.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202101171808409_TABLASNUEVAS2.cs" />
+    <Compile Include="Migrations\202101171808409_TABLASNUEVAS2.designer.cs">
+      <DependentUpon>202101171808409_TABLASNUEVAS2.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositorios\COREBANCARIO\MovimientoRepository.cs" />
+    <Compile Include="Repositorios\COREBANCARIO\CuentaRepository.cs" />
+    <Compile Include="Repositorios\COREBANCARIO\IMovimientoRepository.cs" />
+    <Compile Include="Repositorios\COREBANCARIO\ICuentaRepository.cs" />
+    <Compile Include="Repositorios\COREBANCARIO\IClienteRepository.cs" />
+    <Compile Include="Repositorios\COREBANCARIO\IUsuarioCoreBRepository.cs" />
+    <Compile Include="Repositorios\COREBANCARIO\ClienteRepository.cs" />
+    <Compile Include="Repositorios\COREBANCARIO\UsuarioCoreBRepository.cs" />
+    <Compile Include="Repositorios\General\IMensajeRepository.cs" />
+    <Compile Include="Repositorios\General\MensajeRepository.cs" />
+    <Compile Include="Repositorios\GoogleDrive\GoogleDriveFilesRepository.cs" />
+    <Compile Include="Repositorios\GoogleDrive\IGoogleDriveFilesRepository.cs" />
+    <Compile Include="Repositorios\MesaIdentificacion\IPadronVotacionRepository.cs" />
+    <Compile Include="Repositorios\MesaIdentificacion\PadronVotacionRepository.cs" />
+    <Compile Include="Repositorios\MesaVotacion\IOpcionRepository.cs" />
+    <Compile Include="Repositorios\MesaVotacion\IVotoRepository.cs" />
+    <Compile Include="Repositorios\MesaVotacion\OpcionRepository.cs" />
+    <Compile Include="Repositorios\MesaVotacion\VotoRepository.cs" />
+    <Compile Include="Repositorios\Seguridad\PkUsuario\RecursoRepository.cs" />
+    <Compile Include="Repositorios\Seguridad\PkUsuario\IRecursoRepository.cs" />
+    <Compile Include="Repositorios\Seguridad\PkUsuario\RolRepository.cs" />
+    <Compile Include="Repositorios\Seguridad\PkUsuario\IRolRepository.cs" />
+    <Compile Include="Repositorios\Seguridad\PkUsuario\IPermisoRepository.cs" />
+    <Compile Include="Repositorios\Seguridad\PkUsuario\IUsuarioRolRepository.cs" />
+    <Compile Include="Repositorios\Seguridad\PkUsuario\PermisoRepository.cs" />
+    <Compile Include="Repositorios\Seguridad\PkUsuario\CargoRepository.cs" />
+    <Compile Include="Repositorios\Seguridad\PkUsuario\ICargoRepository.cs" />
+    <Compile Include="Repositorios\Seguridad\PkUsuario\IPersonaRepository.cs" />
+    <Compile Include="Repositorios\Seguridad\PkUsuario\IUsuarioCargoRepository.cs" />
+    <Compile Include="Repositorios\Seguridad\PkUsuario\IUsuarioRepository.cs" />
+    <Compile Include="Repositorios\Seguridad\PkUsuario\PersonaRepository.cs" />
+    <Compile Include="Repositorios\Seguridad\PkUsuario\UsuarioRolRepository.cs" />
+    <Compile Include="Repositorios\Seguridad\PkUsuario\UsuarioCargoRepository.cs" />
+    <Compile Include="Repositorios\Seguridad\PkUsuario\UsuarioRepository.cs" />
+    <Compile Include="Repositorios\ProcesoElectoral\CandidatoRepository.cs" />
+    <Compile Include="Repositorios\ProcesoElectoral\EleccionRepository.cs" />
+    <Compile Include="Repositorios\ProcesoElectoral\EscanioRepository.cs" />
+    <Compile Include="Repositorios\ProcesoElectoral\ICandidatoRepository.cs" />
+    <Compile Include="Repositorios\ProcesoElectoral\IEleccionRepository.cs" />
+    <Compile Include="Repositorios\ProcesoElectoral\IEscanioRepository.cs" />
+    <Compile Include="Repositorios\ProcesoElectoral\IListaRepository.cs" />
+    <Compile Include="Repositorios\ProcesoElectoral\IProcesoElectoralRepository.cs" />
+    <Compile Include="Repositorios\ProcesoElectoral\ITipoEleccionRepository.cs" />
+    <Compile Include="Repositorios\ProcesoElectoral\ListaRepository.cs" />
+    <Compile Include="Repositorios\ProcesoElectoral\ProcesoElectoralRepository.cs" />
+    <Compile Include="Repositorios\ProcesoElectoral\TipoEleccionRepository.cs" />
+    <Compile Include="VotoDbContext.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VotoElectronico.Entidades\CoreBancario.Entidades.csproj">
+      <Project>{07EB2EA5-8022-49A8-BBBC-7E7C8AF98DC0}</Project>
+      <Name>CoreBancario.Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\202008300159202_UnificarMigraciones.resx">
+      <DependentUpon>202008300159202_UnificarMigraciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010060247459_NuevosCamposEnTablas.resx">
+      <DependentUpon>202010060247459_NuevosCamposEnTablas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010080300151_CampoFotoEnCandidato.resx">
+      <DependentUpon>202010080300151_CampoFotoEnCandidato.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202010112102583_NombreMensajeEnTablaTipoMensaje.resx">
+      <DependentUpon>202010112102583_NombreMensajeEnTablaTipoMensaje.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011090025376_NuevasTablasParaPermisos.resx">
+      <DependentUpon>202011090025376_NuevasTablasParaPermisos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011090029201_CorreccionTablaRecursos.resx">
+      <DependentUpon>202011090029201_CorreccionTablaRecursos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011150816466_rolesUsuario.resx">
+      <DependentUpon>202011150816466_rolesUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011180253278_CorreccionTablaPermiso.resx">
+      <DependentUpon>202011180253278_CorreccionTablaPermiso.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011180359164_CorreccionRecursoCircular.resx">
+      <DependentUpon>202011180359164_CorreccionRecursoCircular.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011240000482_menuUsuarioPropiedades.resx">
+      <DependentUpon>202011240000482_menuUsuarioPropiedades.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202011300323204_tokenCambioClaveUsuario.resx">
+      <DependentUpon>202011300323204_tokenCambioClaveUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012030515312_entidades_Voto_opcion.resx">
+      <DependentUpon>202012030515312_entidades_Voto_opcion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012150559078_procesoElectoralVoto.resx">
+      <DependentUpon>202012150559078_procesoElectoralVoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012250230344_CampoEscanioEnVoto.resx">
+      <DependentUpon>202012250230344_CampoEscanioEnVoto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202012261844163_indicesEscanioEleccionNombreOrden.resx">
+      <DependentUpon>202012261844163_indicesEscanioEleccionNombreOrden.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101171759425_TABLASNUEVAS.resx">
+      <DependentUpon>202101171759425_TABLASNUEVAS.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202101171808409_TABLASNUEVAS2.resx">
+      <DependentUpon>202101171808409_TABLASNUEVAS2.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+</Project>

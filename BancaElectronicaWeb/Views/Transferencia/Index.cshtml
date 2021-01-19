@@ -1,0 +1,70 @@
+﻿@model BancaElectronicaWeb.Models.Transferencia
+
+@{
+    ViewBag.Title = "enviarTransferencia";
+}
+    <link rel="stylesheet" runat="server" media="screen" href="~/Content/login.css" />
+
+
+@using (Html.BeginForm("Index", "Transferencia", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="myform form  ">
+
+        <div class="form-horizontal ">
+            <h3 class="myform centrar ">Transferencia Bancaria</h3>
+
+            <hr />
+            @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+            <div class="form-group">
+                <label class="control-label col-md-4">Cuenta de origen</label>
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.CuentaOrigen, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CuentaOrigen, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-4">Cuenta de destino</label>
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.CuentaDestino, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.CuentaDestino, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label col-md-4">Monto a transferir $</label>
+                <div class="col-md-8">
+                    @Html.EditorFor(model => model.Monto, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Monto, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-6 col-md-10">
+                    <input type="submit" value="Realizar transferencia" class="btn btn-default" />
+                </div>
+            </div>
+            <hr />
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    @if (ViewBag.Message != null)
+                    {
+
+                        <h4>@ViewBag.Message</h4>
+                    }
+                </div>
+            </div>
+            <div >
+            @Html.ActionLink("Lista de movimientos bancarios", "Index", "Movimiento")
+            </div>
+
+
+        </div>
+
+    </div>
+}
+
+

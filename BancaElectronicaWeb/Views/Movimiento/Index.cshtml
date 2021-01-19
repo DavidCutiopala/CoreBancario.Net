@@ -1,0 +1,58 @@
+﻿@model IEnumerable<BancaElectronicaWeb.Models.Movimiento>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h3>Movimientos realizados </h3>
+
+
+<table class="table">
+    <tr>
+        <th>
+            <label class="control-label col-md-2">Fecha creación</label>
+        </th>
+        <th>
+            <label class="control-label col-md-2">Tipo de movimiento</label>
+        </th>
+        <th>
+            <label class="control-label col-md-2">Valor</label>
+        </th>
+        <th>
+            <label class="control-label col-md-2">Saldo final</label>
+        </th>
+        <th>
+            <label class="control-label col-md-2">Cuenta origen</label>
+        </th>
+        <th>
+            <label class="control-label col-md-2">Cuenta destino</label>
+        </th>
+
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.FechaCreacion)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.TipoMovimiento)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Valor)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.SaldoFinal)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CuentaOrigen)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.CuentaDestino)
+        </td>
+
+    </tr>
+}
+
+</table>

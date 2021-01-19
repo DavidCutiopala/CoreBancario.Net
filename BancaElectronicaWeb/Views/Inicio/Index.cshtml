@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewBag.Title = "Inicio";
+
+    if (Session["nombre"] == null)
+    {
+
+        Response.Redirect("~/Home/Index");
+    }
+}
+
+    <h3>Bienvenido  @Session["nombre"].ToString() @Session["apellido"].ToString() </h3>
+
+
+<div class="card" style="width: 30rem;">
+    <img class="card-img-top" src="~/Content/img/Captura.PNG" alt="Card image cap">
+    <div class="caption">
+        <p class="card-text">Descubre todos los nuevos productos que tenemos para ti.</p>
+    </div>
+</div>
+

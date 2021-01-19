@@ -1,0 +1,168 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6D690986-6A56-4E0D-B708-169028D8748C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VotoElectronico.LogicaNegocio</RootNamespace>
+    <AssemblyName>VotoElectronico.LogicaNegocio</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.8.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.8\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.JsonWebTokens, Version=6.7.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.JsonWebTokens.6.7.1\lib\net461\Microsoft.IdentityModel.JsonWebTokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Logging, Version=6.7.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Logging.6.7.1\lib\net461\Microsoft.IdentityModel.Logging.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.IdentityModel.Tokens, Version=6.7.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.IdentityModel.Tokens.6.7.1\lib\net461\Microsoft.IdentityModel.Tokens.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IdentityModel.Tokens.Jwt, Version=6.7.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.IdentityModel.Tokens.Jwt.6.7.1\lib\net461\System.IdentityModel.Tokens.Jwt.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.Threading.Tasks" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VotoElectronico.LogicaCondicional">
+      <HintPath>..\VotoElectronico.LogicaCondicional\bin\Debug\VotoElectronico.LogicaCondicional.dll</HintPath>
+    </Reference>
+    <Reference Include="VotoElectronicoRepositorioGenerico">
+      <HintPath>..\dll\VotoElectronicoRepositorioGenerico.dll</HintPath>
+    </Reference>
+    <Reference Include="VotoElectronicoSpecification">
+      <HintPath>..\dll\VotoElectronicoSpecification.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Servicios\CoreBancario\IUsuarioCBService.cs" />
+    <Compile Include="Servicios\CoreBancario\UsuarioCBService.cs" />
+    <Compile Include="Servicios\CoreBancario\CuentaService.cs" />
+    <Compile Include="Servicios\CoreBancario\ICuentaService.cs" />
+    <Compile Include="Servicios\CoreBancario\IMovimientoService.cs" />
+    <Compile Include="Servicios\CoreBancario\MovimientoService.cs" />
+    <Compile Include="Servicios\CoreBancario\IClienteCBService.cs" />
+    <Compile Include="Servicios\CoreBancario\ClienteCBService.cs" />
+    <Compile Include="Servicios\GoogleDrive\IGoogleDriveService.cs" />
+    <Compile Include="Servicios\GoogleDrive\GoogleDriveService.cs" />
+    <Compile Include="Servicios\Login\ILoginService.cs" />
+    <Compile Include="Servicios\Login\LoginService.cs" />
+    <Compile Include="Servicios\PkMesaIdentificacion\IAesService.cs" />
+    <Compile Include="Servicios\PkMesaIdentificacion\IPadronVotacionService.cs" />
+    <Compile Include="Servicios\PkMesaIdentificacion\PradonVotacionService.cs" />
+    <Compile Include="Servicios\PkMesaIdentificacion\AesService.cs" />
+    <Compile Include="Servicios\PkMesaVotacion\IOpcionService.cs" />
+    <Compile Include="Servicios\PkMesaVotacion\IMesaVotoService.cs" />
+    <Compile Include="Servicios\PkMesaVotacion\IVotoService.cs" />
+    <Compile Include="Servicios\PkMesaVotacion\OpcionService.cs" />
+    <Compile Include="Servicios\PkMesaVotacion\MesaVotoService.cs" />
+    <Compile Include="Servicios\PkMesaVotacion\VotoService.cs" />
+    <Compile Include="Servicios\PkProcesoElectoral\ICandidatoService.cs" />
+    <Compile Include="Servicios\PkProcesoElectoral\CandidatoService.cs" />
+    <Compile Include="Servicios\PkProcesoElectoral\ListaService.cs" />
+    <Compile Include="Servicios\PkProcesoElectoral\IListaService.cs" />
+    <Compile Include="Servicios\PkProcesoElectoral\ProcesoElectoralService.cs" />
+    <Compile Include="Servicios\PkProcesoElectoral\EscanioService.cs" />
+    <Compile Include="Servicios\PkProcesoElectoral\IProcesoElectoralService.cs" />
+    <Compile Include="Servicios\PkProcesoElectoral\IEscanioService.cs" />
+    <Compile Include="Servicios\PkProcesoElectoral\IEleccionService.cs" />
+    <Compile Include="Servicios\PkProcesoElectoral\EleccionService.cs" />
+    <Compile Include="Servicios\PkProcesoElectoral\TipoEleccionService.cs" />
+    <Compile Include="Servicios\PkProcesoElectoral\ITipoEleccionService.cs" />
+    <Compile Include="Servicios\PkUsuario\RecursoService.cs" />
+    <Compile Include="Servicios\PkUsuario\IRecursoService.cs" />
+    <Compile Include="Servicios\PkUsuario\IUsuarioRolService.cs" />
+    <Compile Include="Servicios\PkUsuario\RolService.cs" />
+    <Compile Include="Servicios\PkUsuario\IRolService.cs" />
+    <Compile Include="Servicios\PkUsuario\PermisoService.cs" />
+    <Compile Include="Servicios\PkUsuario\IPermisoService.cs" />
+    <Compile Include="Servicios\PkUsuario\UsuarioRolService.cs" />
+    <Compile Include="Servicios\PkUsuario\UsuarioCargoService.cs" />
+    <Compile Include="Servicios\PkUsuario\IUsuarioCargoService.cs" />
+    <Compile Include="Servicios\PkUsuario\ICargoService.cs" />
+    <Compile Include="Servicios\PkUsuario\IPersonaService.cs" />
+    <Compile Include="Servicios\PkUsuario\IUsuarioService.cs" />
+    <Compile Include="Servicios\PkUsuario\CargoService.cs" />
+    <Compile Include="Servicios\PkUsuario\PersonaService.cs" />
+    <Compile Include="Servicios\PkUsuario\UsuarioService.cs" />
+    <Compile Include="Servicios\RSA\IRsaHelper.cs" />
+    <Compile Include="Servicios\RSA\RSAHelper.cs" />
+    <Compile Include="Servicios\SessionService\ISesionService.cs" />
+    <Compile Include="Servicios\SessionService\SesionService.cs" />
+    <Compile Include="Servicios\ValidatorSeguridad\token\ITokenValidator.cs" />
+    <Compile Include="Servicios\ValidatorSeguridad\token\TokenGenerator.cs" />
+    <Compile Include="Servicios\ValidatorSeguridad\token\TokenValidator.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VotoElectronico.AccesoDatos\CoreBancario.AccesoDatos.csproj">
+      <Project>{92B0B527-CE57-47A0-B573-C7CDC5B61C54}</Project>
+      <Name>CoreBancario.AccesoDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VotoElectronico.Entidades\CoreBancario.Entidades.csproj">
+      <Project>{07EB2EA5-8022-49A8-BBBC-7E7C8AF98DC0}</Project>
+      <Name>CoreBancario.Entidades</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VotoElectronico.Generico\CoreBancario.Generico.csproj">
+      <Project>{B30554E7-E439-4947-8EDB-6124E3B6471B}</Project>
+      <Name>CoreBancario.Generico</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VotoElectronico.Mailer\VotoElectronico.Mailer.csproj">
+      <Project>{27774A51-BE39-4B21-AC3C-74C312A383AC}</Project>
+      <Name>VotoElectronico.Mailer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VotoElectronico.Util\VotoElectronico.Util.csproj">
+      <Project>{90BDAE69-EF5C-4BD7-85F8-7E6B21B7E04A}</Project>
+      <Name>VotoElectronico.Util</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Servicios\KeysRSA\privatekey.pem" />
+    <None Include="Servicios\KeysRSA\publickey.pem" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

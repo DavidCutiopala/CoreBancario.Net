@@ -1,0 +1,104 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{B30554E7-E439-4947-8EDB-6124E3B6471B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>VotoElectronico.Generico</RootNamespace>
+    <AssemblyName>VotoElectronico.Generico</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <LangVersion>8.0</LangVersion>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+    <Reference Include="VotoElectronicoRepositorioGenerico, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Configs\ExtensionEnumeraciones.cs" />
+    <Compile Include="Configs\HttpPostedFileBaseCustom.cs" />
+    <Compile Include="Configs\Mapper.cs" />
+    <Compile Include="Constantes\CtVariables.cs" />
+    <Compile Include="Constantes\CtEstaticas.cs" />
+    <Compile Include="DtoCoreBancario\DtoCuenta.cs" />
+    <Compile Include="DtoCoreBancario\DtoMovimiento.cs" />
+    <Compile Include="DtoCoreBancario\DtoTransferencia.cs" />
+    <Compile Include="DtoCoreBancario\DtoClienteCB.cs" />
+    <Compile Include="DtoGenerico\DtoApiResponseMessage.cs" />
+    <Compile Include="DtoGenerico\DtoImportacionPadron.cs" />
+    <Compile Include="DtoGenerico\DtoEspecificacion.cs" />
+    <Compile Include="DtoPkGeneral\DtoImagen.cs" />
+    <Compile Include="DtoPkGeneral\DtoMensaje.cs" />
+    <Compile Include="DtoPKMesaIdentificacion\DtoVotoRSA.cs" />
+    <Compile Include="DtoPkMesaVotacion\DtoAES.cs" />
+    <Compile Include="DtoPKMesaIdentificacion\DtoPadronVotacion.cs" />
+    <Compile Include="DtoPkProcesoElectoral\DtoCandidato.cs" />
+    <Compile Include="DtoPkProcesoElectoral\DtoDetalleVotoLista.cs" />
+    <Compile Include="DtoPkProcesoElectoral\DtoLista.cs" />
+    <Compile Include="DtoPkProcesoElectoral\DtoProcesoElectoral.cs" />
+    <Compile Include="DtoPkProcesoElectoral\DtoEscanio.cs" />
+    <Compile Include="DtoPkProcesoElectoral\DtoEleccion.cs" />
+    <Compile Include="DtoPkProcesoElectoral\DtoTipoEleccion.cs" />
+    <Compile Include="DtoPKSeguridad\DtoRecurso.cs" />
+    <Compile Include="DtoPKSeguridad\DtoRol.cs" />
+    <Compile Include="DtoPKSeguridad\DtoPermiso.cs" />
+    <Compile Include="DtoPKSeguridad\DtoUsuarioRol.cs" />
+    <Compile Include="DtoPKSeguridad\DtoUsuarioCargo.cs" />
+    <Compile Include="DtoPKSeguridad\DtoCargo.cs" />
+    <Compile Include="DtoPKSeguridad\DtoPersona.cs" />
+    <Compile Include="DtoPKSeguridad\DtoUsuario.cs" />
+    <Compile Include="DtoGenerico\DtoGenerico.cs" />
+    <Compile Include="Enumeraciones\Enumeraciones.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Propiedades\Auditoria.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VotoElectronico.AccesoDatos\CoreBancario.AccesoDatos.csproj">
+      <Project>{92B0B527-CE57-47A0-B573-C7CDC5B61C54}</Project>
+      <Name>CoreBancario.AccesoDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\VotoElectronico.Entidades\CoreBancario.Entidades.csproj">
+      <Project>{07eb2ea5-8022-49a8-bbbc-7e7c8af98dc0}</Project>
+      <Name>CoreBancario.Entidades</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
